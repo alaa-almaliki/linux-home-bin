@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# chnage file owner and group and permissions
+
+function rootfile()
+{
+    TARGET_FILE=$1;
+    if [ ! -f $TARGET_FILE ]; then
+        echo "File no exists!"
+        exit 1;
+    fi
+
+    chown root $TARGET_FILE;
+    chgrp root $TARGET_FILE;
+    chmod 755 $TARGET_FILE;
+    exit 0;
+}
+
+rootfile $1
