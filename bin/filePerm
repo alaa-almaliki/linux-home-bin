@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# chnage file owner and group and permissions
+
+# command: ./filePerm filename
+# command: ./filePerm filename {user} {group} {mode}
+
+function filePerm()
+{
+    TARGET_FILE=$1;
+    FILE_USER=$2;
+    FILE_GROUP=$3;
+    FILE_MODE=$4;
+
+    if [ ! -f $TARGET_FILE ]; then
+        echo "File no exists!"
+        exit 1;
+    fi
+
+    if [ -z $FILE_USER ]; then
+        FILE_USER="root";
+    fi
+
+    if [ -z $FILE_GROUP ];then
+        FILE_GROUP=root;
+    fi
+
+    if [ -z $FILE_MODE ]; then
+       FILE_MODE=755;
+    fi
+
+    chown $FILE_USER $TARGET_FILE;
+    chgrp $FILE_GROUP $TARGET_FILE;
+    chmod $FILE_MODE $TARGET_FILE;
+    exit 0;
+}
+
+filePerm $1 $2 $3 $4

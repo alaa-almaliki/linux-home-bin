@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# add your home/{user}/bin to your PATH
+# command: ./home_bin
+
+HOME_BIN=$HOME/bin
+PATH=$PATH:$HOME_BIN
+export PATH
