@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# copy file into clipboard
+# usage: ./copy {filename}
+
+function copy() 
+{
+    cat $1 | xclip -sel clip
+}
+
+copy $1
+exit 1

@@ -2,8 +2,8 @@
 
 # chnage file owner and group and permissions
 
-# command: ./filePerm filename
-# command: ./filePerm filename {user} {group} {mode}
+# command: ./filePerm {filename}
+# command: ./filePerm {filename} {user} {group} {mode}
 
 function filePerm()
 {

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# copy file and paste it into another file
+# usage: ./paste {filename} {fileCopy}
+function paste()
+{
+    if [ -z $2 ]; then
+        cat $1 | xclip -sel clip | xclip -o
+    else 
+        cat $1 | xclip -sel clip| xclip -o > $2
+    fi
+}
+
+paste $1 $2
+
